@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa 
+        Homies Shop
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #010312ea;
+        }
+        .navbar {
+            background-color: #000000;
+            color: rgb(238, 218, 218);
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: rgb(211, 0, 0);
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #ffffff;
+            color: rgb(255, 255, 255);
+        }
+        .main {
+            padding: 20px;
+            text-align: center;
+        }
+        .product, .cart-item {
+            display: inline-block;
+            background: rgb(0, 0, 0);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgb(216, 38, 38);
+        }
+        .product img, .cart-item img {
+            width: 180px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product h3, .cart-item h3 {
+            margin: 10px 0;
+        }
+        .product p, .cart-item p {
+            color: #ff0909;
+        }
+        .product button, .cart-item button {
+            background-color: #ffffff;
+            color: rgb(207, 0, 0);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product button:hover, .cart-item button:hover {
+            background-color: #0f0e0e;
+        }
+        .footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .cart {
+            margin-top: 20px;
+            padding: 20px;
+            background: #000000;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(211, 34, 34, 0.975);
+        }
+        .cart h2 {
+            margin-bottom: 20px;
+        }
+        .cart-empty {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#home">Inicio</a>
+        <a href="#products">Productos</a>
+        <a href="#cart">Carrito</a>
+        <a href="#contact">Contacto</a>
+    </div>
+
+    <div class="main" id="home">
+        <h1>Bienvenidos a nuestra Tienda de Ropa 
+            Homies Shop
+        </h1>
+        <p>Encuentra las mejores prendas a tu estilo</p>
+    </div>
+
+    <div class="main" id="products">
+        <h2>Nuestros Productos</h2>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233407.png" alt="Playera Casual">
+            <h3>Playera Casual</h3>
+            <p>Playera color melon 
+                talla M  </p>
+            <button onclick="addToCart('Playera Casual', 150.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233809.png" alt="Playera Guess">
+            <h3>Playera Guess</h3>
+            <p>Playera marca Guess color verde</p>
+            <button onclick="addToCart('Playera Guess', 230.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233437.png" alt="Chamarra Puma">
+            <h3>Chamarra Puma</h3>
+            <p>Chamarra marca Puma color gris</p>
+            <button onclick="addToCart('Chamarra Puma', 380.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233537.png" alt="sudadera Champion">
+            <h3>sudadera Champion</h3>
+            <p>Sudadera marca Champion color negro</p>
+            <button onclick="addToCart('udadera Champion', 350.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233558.png" alt="Playera Guess">
+            <h3>Playera Guess</h3>
+            <p>Playera marca Guess color gris</p>
+            <button onclick="addToCart('Playera Guess', 230.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233621.png" alt="Playera Guess">
+            <h3>Playera Guess</h3>
+            <p>Playera marca Guess color rojo</p>
+            <button onclick="addToCart('Playera Guess', 230.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233642.png" alt="Playera Nautica">
+            <h3>Playera Nautica</h3>
+            <p>Playera Nautica color blanco</p>
+            <button onclick="addToCart('Playera Nautica', 230.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233701.png" alt="Pants deportivo">
+            <h3>Pants deportivo</h3>
+            <p>Pants tipo deportivo color negro</p>
+            <button onclick="addToCart('Pants deportivo', 260.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233723.png" alt="Pants deportivo">
+            <h3>Pants deportivo</h3>
+            <p>Pants tipo deportivo color gris</p>
+            <button onclick="addToCart('Pants deportivo', 260.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233851.png" alt="Sudadera Hugo Boss">
+            <h3>Sudadera Hugo Boss</h3>
+            <p>Sudadera marca Hugo Boss color negro</p>
+            <button onclick="addToCart('Sudadera Hugo Boss', 250.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233940.png" alt="Playera Psycho Bunny">
+            <h3>Playera Psycho Bunny</h3>
+            <p>Playera marca Psycho Bunny color blanco</p>
+            <button onclick="addToCart('Playera Psycho Bunny', 220.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_234036.png" alt="Playera Moschino">
+            <h3>Playera Moschino</h3>
+            <p>Playera marca Moschino color negro</p>
+            <button onclick="addToCart('Playera Moschino', 180.00)">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <img src="imagenes/Photoroom_20240426_233851.png" alt="Playera Hugo Boss">
+            <h3>Playera Hugo Boss</h3>
+            <p>Playera marca Hugo Boss color blanco</p>
+            <button onclick="addToCart('Playera Hugo Boss', 200.00)">Añadir al Carrito</button>
+        </div>
+    </div>
+
+    <div class="main" id="cart">
+        <h2>Carrito de Compras</h2>
+        <div class="cart" id="cart-items">
+            <p class="cart-empty">Tu carrito está vacío.</p>
+        </div>
+    </div>
+
+    <div class="footer" id="contact">
+        <p>Contacto: homies_shop06</p>
+        <p>Teléfono: 77-91-35-62-75</p>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function addToCart(productName, productPrice) {
+            const product = { name: productName, price: productPrice };
+            cart.push(product);
+            updateCart();
+            alert(productName + " ha sido añadido al carrito.");
+        }
+
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="cart-empty">Tu carrito está vacío.</p>';
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="https://via.placeholder.com/200" alt="${item.name}">
+                    <h3>${item.name}</h3>
+                    <p>Precio: $${item.price.toFixed(2)}</p>
+                    <button onclick="removeFromCart(${index})">Eliminar</button>
+                    <button onclick="removeFromCart(${index})">Comprar</button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+    </script>
+    
+</body>
+</html>
